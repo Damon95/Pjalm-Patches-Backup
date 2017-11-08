@@ -1,0 +1,28 @@
+# Maintained by: PJALM (help@pjalm.com) for: http://pjalm.com/repos/
+
+# These patches are the registered property of PJALM.COM and can not be
+# redistributed or modified without the written consent of PJALM.COM.
+# Links to these patches are allowed. All material is protected under the DMCA.
+
+# Last Updated  : 05/07/2016
+# Patch Name    : USB - Remove EHCI Devices for OSX 10.11
+# Patch Version : 1.0
+
+# Remove the EHCI devices for OSX 10.11 Support (Optional)
+into device label EHC1 parent_label _SB.PCI0 remove_entry;
+into device label EHC2 parent_label _SB.PCI0 remove_entry;
+into method label LXDH code_regex \_SB.PCI0.EHC[1-2].GPEH\s\(\)\s+ removeall_matched;
+into scope label _SB.PCI0.EHC1.HUBN.PR01.PR11 remove_entry;
+into scope label _SB.PCI0.EHC1.HUBN.PR01.PR12 remove_entry;
+into scope label _SB.PCI0.EHC1.HUBN.PR01.PR13 remove_entry;
+into scope label _SB.PCI0.EHC1.HUBN.PR01.PR14 remove_entry;
+into scope label _SB.PCI0.EHC1.HUBN.PR01.PR15 remove_entry;
+into scope label _SB.PCI0.EHC1.HUBN.PR01.PR16 remove_entry;
+into scope label _SB.PCI0.EHC1.HUBN.PR01.PR17 remove_entry;
+into scope label _SB.PCI0.EHC1.HUBN.PR01.PR18 remove_entry;
+into scope label _SB.PCI0.EHC2.HUBN.PR01.PR11 remove_entry;
+into scope label _SB.PCI0.EHC2.HUBN.PR01.PR12 remove_entry;
+into scope label _SB.PCI0.EHC2.HUBN.PR01.PR13 remove_entry;
+into scope label _SB.PCI0.EHC2.HUBN.PR01.PR14 remove_entry;
+into scope label _SB.PCI0.EHC2.HUBN.PR01.PR15 remove_entry;
+into scope label _SB.PCI0.EHC2.HUBN.PR01.PR16 remove_entry;
